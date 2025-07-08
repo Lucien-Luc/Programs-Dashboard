@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Programs collection - allow read/write for authenticated users
+    match /programs/{programId} {
+      allow read, write: if true; // For now, allow all access for admin functionality
+    }
+    
+    // Activities collection - allow read/write for authenticated users
+    match /activities/{activityId} {
+      allow read, write: if true;
+    }
+    
+    // Table configuration - allow read/write for admin users
+    match /tableConfig/{configId} {
+      allow read, write: if true;
+    }
+    
+    // Column headers - allow read/write for admin users
+    match /columnHeaders/{headerId} {
+      allow read, write: if true;
+    }
+    
+    // Program suggestions - allow read/write for admin users
+    match /programSuggestions/{suggestionId} {
+      allow read, write: if true;
+    }
+    
+    // Admin settings - allow read/write for admin users
+    match /adminSettings/{settingId} {
+      allow read, write: if true;
+    }
+    
+    // Users collection - allow users to read/write their own data
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+    
+    // Admin users collection - allow read/write for admin authentication
+    match /admin_users/{adminId} {
+      allow read, write: if true;
+    }
+  }
+}

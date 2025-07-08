@@ -1,0 +1,422 @@
+# BPN Program Tracker Dashboard - Comprehensive Development Prompt
+
+## Project Overview
+Create a sophisticated program management dashboard inspired by the attached leave management interface. This will be a dual-application system: a **User Dashboard** for viewing program data and an **Admin Panel** for complete data management.
+
+## Technical Requirements
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript (no frameworks)
+- **Backend**: Firebase (Firestore, Authentication, Hosting)
+- **Responsive Design**: Mobile-first approach
+- **Performance**: Fast loading, smooth animations
+- **Accessibility**: WCAG 2.1 compliant
+
+---
+
+## APPLICATION 1: USER DASHBOARD
+
+### Navigation Bar Structure
+**Left Side:**
+- BPN logo with "PROGRAM MANAGEMENT" subtitle
+- Active page indicator (Dashboard highlighted in teal)
+
+**Center Navigation:**
+- Dashboard (active)
+- Calendar 
+- Analytics
+- Profile
+
+**Right Side:**
+- Language Switcher dropdown: 🇬🇧 English | 🇫🇷 Français | 🇷🇼 Kinyarwanda | 🇨🇭 Deutsch
+- Theme Switcher button with 4 options:
+  1. **Default Theme**: Teal/blue like reference image
+  2. **Dark Theme**: Dark gray/black with accent colors
+  3. **Blue Theme**: Navy blue with white backgrounds
+  4. **Custom Theme**: Purple gradient with modern styling
+- Admin Access button (if user has admin privileges)
+- User profile dropdown with logout option
+
+### Main Dashboard Header
+- **Title**: "Dashboard" with dashboard icon
+- **Welcome Message**: "Good morning, [User Name]! Here's your program management overview."
+- **Action Buttons**: 
+  - "+ New Update" (teal button)
+  - "🔄 Refresh" (outline button)
+
+### Program Overview Section (Replacing Quick Stats)
+Create 5 responsive cards in a grid layout:
+
+**Card 1: CORE Program**
+- Icon: 🎯 (target/bullseye)
+- Main Number: Display current active participants
+- Label: "CORE PROGRAM PARTICIPANTS"
+- Color: Teal (#4A90A4)
+- Click Action: Opens 360° program view
+
+**Card 2: RIN Program**
+- Icon: 🤝 (handshake/community)
+- Main Number: Current beneficiaries
+- Label: "RIN BENEFICIARIES"
+- Color: Orange (#E67E22)
+- Click Action: Opens 360° program view
+
+**Card 3: AGUKA Program**
+- Icon: 🌱 (growth/seedling)
+- Main Number: Businesses supported
+- Label: "AGUKA BUSINESSES"
+- Color: Green (#27AE60)
+- Click Action: Opens 360° program view
+
+**Card 4: i-ACC Program**
+- Icon: 🚀 (innovation/acceleration)
+- Main Number: Startups in accelerator
+- Label: "i-ACC STARTUPS"
+- Color: Purple (#8E44AD)
+- Click Action: Opens 360° program view
+
+**Card 5: MCF (Grow2Scale)**
+- Icon: 📈 (scaling/growth chart)
+- Main Number: Total sub-projects
+- Label: "MCF SUB-PROJECTS"
+- Color: Blue (#3498DB)
+- **Special Feature**: Hover reveals sub-project breakdown
+- Click Action: Opens detailed MCF dashboard with all sub-projects
+
+### Program Timeline Section (Replacing Leave Balances)
+**Section Title**: "📊 Program Progress Timeline"
+
+Create progress bars for each program showing quarterly advancement:
+
+**Core Program Timeline**
+- Label: "Core Program - Q2 2025"
+- Progress Bar: 75% filled (teal color)
+- Days/Timeline: "Q1-Q4 2025"
+- Click Action: Opens detailed timeline graph
+
+**RIN Program Timeline**
+- Label: "RIN Program - Q2 2025" 
+- Progress Bar: 60% filled (orange color)
+- Timeline: "Q1-Q4 2025"
+- Click Action: Opens detailed timeline graph
+
+**AGUKA Program Timeline**
+- Label: "AGUKA Program - Q2 2025"
+- Progress Bar: 45% filled (green color)
+- Timeline: "Q1-Q4 2025"
+- Click Action: Opens detailed timeline graph
+
+**i-ACC Program Timeline**
+- Label: "i-ACC Program - Q2 2025"
+- Progress Bar: 30% filled (purple color)
+- Timeline: "Q1-Q4 2025"
+- Click Action: Opens detailed timeline graph
+
+**MCF Timeline**
+- Label: "MCF (Grow2Scale) - Q2 2025"
+- Progress Bar: 85% filled (blue color)
+- Timeline: "Q1-Q4 2025"
+- Click Action: Opens MCF sub-projects timeline breakdown
+
+### Recent Activity Section
+**Section Title**: "📋 Recent Program Activity"
+
+**Table Structure**:
+| PROGRAM | ACTIVITY TYPE | DATE | STATUS | DETAILS | ACTIONS |
+|---------|---------------|------|--------|---------|---------|
+| Core | Training Session | Jun 18, 2025 | COMPLETED | 25 participants | 👁️ View |
+| RIN | Coaching Session | Jun 17, 2025 | IN PROGRESS | Refugee entrepreneurs | ✏️ Edit |
+| AGUKA | Business Review | Jun 16, 2025 | SCHEDULED | Growth assessment | 📅 Schedule |
+| i-ACC | Pitch Event | Jun 15, 2025 | COMPLETED | 8 startups presented | 🏆 Results |
+| MCF | Quarterly Review | Jun 14, 2025 | PENDING | Financial reporting | ⏳ Pending |
+
+**Status Color Coding**:
+- COMPLETED: Green
+- IN PROGRESS: Blue  
+- SCHEDULED: Orange
+- PENDING: Yellow
+- CANCELLED: Red
+
+### 360° Program View Modal
+When clicking on any program card, open a comprehensive modal/page showing:
+
+**Header Section**:
+- Program name and icon
+- Current status badge
+- Last updated timestamp
+
+**Key Metrics Dashboard**:
+- Participants/Beneficiaries count
+- Budget utilization percentage
+- Timeline progress
+- Success rate/completion rate
+
+**Detailed Information Tabs**:
+1. **Overview**: Description, objectives, target audience
+2. **Timeline**: Gantt chart with milestones and deadlines
+3. **Budget**: Financial tracking, expenditure vs. allocation
+4. **Activities**: Recent and upcoming activities log
+5. **Team**: Assigned coaches, coordinators, partners
+6. **Resources**: Documents, files, links, training materials
+7. **Impact**: Key performance indicators, success stories
+8. **Notes**: Internal notes and observations
+
+**Action Buttons**:
+- Export Report
+- Share Program Info
+- Schedule Meeting
+- Add Note
+
+---
+
+## APPLICATION 2: ADMIN DASHBOARD
+
+### Admin Authentication
+- Separate login page with Firebase Authentication
+- Role-based access control
+- Secure admin-only routes
+
+### Admin Dashboard Layout
+**Navigation Sidebar**:
+- Dashboard Overview
+- Program Management
+- User Management  
+- Timeline Control
+- Activity Logs
+- Settings
+- Reports & Analytics
+
+### Program Management Table
+**Comprehensive Data Table** with following columns:
+- Program Name (editable)
+- Status (dropdown: Active, Paused, Completed, Cancelled)
+- Progress % (slider input)
+- Start Date (date picker)
+- End Date (date picker)
+- Budget Allocated (currency input)
+- Budget Used (currency input)
+- Participants Count (number input)
+- Assigned Team (multi-select dropdown)
+- Priority Level (High/Medium/Low)
+- Actions (Edit, Delete, Clone, Archive)
+
+**Table Features**:
+- Search and filter functionality
+- Bulk actions (delete, status change, export)
+- Inline editing capabilities
+- Data validation and error handling
+- Real-time updates to user dashboard
+
+### Program Creation/Editing Form
+**Comprehensive Form Fields**:
+- Program Name (required)
+- Program Type (dropdown: Core, RIN, AGUKA, i-ACC, MCF)
+- Description (rich text editor)
+- Objectives (multiple text inputs)
+- Target Audience (text area)
+- Timeline (start date, end date, milestones)
+- Budget Details (allocation by category)
+- Team Assignment (user selection)
+- Resources (file upload capability)
+- Success Metrics (KPI definition)
+- Status and Progress Controls
+
+### Timeline Management Interface
+- Visual timeline editor for each program
+- Drag-and-drop milestone management
+- Progress percentage controls
+- Quarterly view and annual planning
+- Automated progress calculations
+- Critical path identification
+
+### Activity Management
+- Add/Edit/Delete activities for any program
+- Activity type categorization
+- Date and time scheduling
+- Participant management
+- Status tracking and updates
+- Automated notifications
+
+### User-Side Control Panel
+**Real-time Control Over User Dashboard**:
+- Toggle program visibility
+- Modify program card colors and icons  
+- Update welcome messages and notifications
+- Control theme availability
+- Manage language translations
+- Dashboard layout customization
+
+### Analytics & Reporting
+- Program performance dashboards
+- Progress tracking charts and graphs
+- Budget utilization reports
+- Timeline adherence metrics
+- User engagement analytics
+- Exportable reports (PDF, Excel, CSV)
+
+---
+
+## TECHNICAL IMPLEMENTATION REQUIREMENTS
+
+### Firebase Structure
+```javascript
+// Firestore Collections Structure
+programs/ {
+  programId: {
+    name: string,
+    type: string,
+    description: string,
+    status: string,
+    progress: number,
+    startDate: timestamp,
+    endDate: timestamp,
+    budget: {
+      allocated: number,
+      used: number
+    },
+    participants: number,
+    team: array,
+    activities: array,
+    milestones: array,
+    createdAt: timestamp,
+    updatedAt: timestamp
+  }
+}
+
+activities/ {
+  activityId: {
+    programId: string,
+    type: string,
+    description: string,
+    date: timestamp,
+    status: string,
+    participants: array,
+    notes: string
+  }
+}
+
+users/ {
+  userId: {
+    email: string,
+    role: string,
+    permissions: array,
+    lastLogin: timestamp
+  }
+}
+```
+
+### Interactive Features
+1. **Real-time Data Sync**: Firebase real-time listeners
+2. **Smooth Animations**: CSS transitions and transforms
+3. **Progressive Loading**: Skeleton screens while loading
+4. **Error Handling**: User-friendly error messages
+5. **Offline Support**: Basic offline functionality
+6. **Data Validation**: Input validation and sanitization
+7. **Export Functions**: PDF and Excel export capabilities
+
+### Performance Optimizations
+- Lazy loading for large datasets
+- Image optimization and compression
+- CSS and JS minification
+- Caching strategies
+- Efficient Firebase queries
+- Responsive image delivery
+
+### Security Measures
+- Firebase Security Rules
+- Input sanitization
+- XSS protection
+- CSRF protection
+- Role-based access control
+- Audit logging
+
+---
+
+## DESIGN SPECIFICATIONS
+
+### Color Schemes for Themes
+
+**Theme 1 - Default (Reference Image)**:
+- Primary: #4A90A4 (Teal)
+- Secondary: #5DADE2 (Light Blue)
+- Background: #F8F9FA (Light Gray)
+- Text: #2C3E50 (Dark Gray)
+- Accent: #E74C3C (Red for alerts)
+
+**Theme 2 - Dark Mode**:
+- Primary: #1ABC9C (Bright Teal)
+- Secondary: #3498DB (Blue)
+- Background: #2C3E50 (Dark Gray)
+- Surface: #34495E (Medium Gray)
+- Text: #ECF0F1 (Light Gray)
+
+**Theme 3 - Blue Professional**:
+- Primary: #2980B9 (Navy Blue)
+- Secondary: #3498DB (Light Blue)  
+- Background: #FFFFFF (White)
+- Surface: #EBF3FD (Very Light Blue)
+- Text: #2C3E50 (Dark Gray)
+
+**Theme 4 - Custom Modern**:
+- Primary: Linear gradient (#8E44AD to #9B59B6)
+- Secondary: #E67E22 (Orange)
+- Background: #F7F3FF (Very Light Purple)
+- Surface: #FFFFFF (White)
+- Text: #2C3E50 (Dark Gray)
+
+### Typography
+- **Headers**: 'Segoe UI', system-ui, sans-serif
+- **Body**: 'Segoe UI', system-ui, sans-serif  
+- **Numbers**: 'SF Mono', Monaco, monospace
+
+### Component Styling
+- **Cards**: Subtle shadows, rounded corners (8px)
+- **Buttons**: Consistent padding, hover effects
+- **Tables**: Zebra striping, hover highlighting
+- **Forms**: Clear labels, validation feedback
+- **Modals**: Backdrop blur, smooth animations
+
+---
+
+## TESTING REQUIREMENTS
+
+### Functional Testing
+- All CRUD operations work correctly
+- Real-time data synchronization
+- Theme switching functionality
+- Language switching (placeholder text)
+- Responsive design across devices
+- Form validation and error handling
+
+### User Experience Testing
+- Intuitive navigation flow
+- Fast loading times (<3 seconds)
+- Smooth animations and transitions
+- Clear visual feedback for all actions
+- Accessibility compliance (keyboard navigation, screen readers)
+
+### Security Testing
+- Admin authentication and authorization
+- Data validation and sanitization
+- Protection against common web vulnerabilities
+- Firebase security rules enforcement
+
+---
+
+## DELIVERABLES
+
+1. **User Dashboard Application** (index.html + assets)
+2. **Admin Dashboard Application** (admin.html + assets)
+3. **Firebase Configuration Files**
+4. **CSS Theme Files** (4 complete themes)
+5. **JavaScript Modules** (organized, commented code)
+6. **Documentation** (setup instructions, user guide)
+7. **Sample Data** (demo programs and activities)
+
+**Success Criteria**: 
+- Pixel-perfect implementation matching the reference design
+- Fully functional admin controls over user interface
+- Smooth, professional user experience
+- Scalable, maintainable code architecture
+- Complete Firebase integration
+- Multi-theme and multi-language ready
+
+Please implement this as a production-ready application with attention to detail, user experience, and code quality. Focus on creating a professional tool that BPN staff will love to use daily.
